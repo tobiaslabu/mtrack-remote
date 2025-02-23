@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@import "./default_theme.css";
+
+body {
+    background: var(--color-bg-800);
+    color: var(--color-text-200);
+    padding: 1.5%;
+    /* border-width: 0.1em;
+    border-radius: 1%; */
+}
+
+header {
+    text-align: center;
+    font-weight: 800;
+    font-size: xx-large;
+    text-shadow: 0.0em 0.0em 0.4em var(--color-primary-700) ;
+}
+
+button {
+    background-color: var(--color-bg-600);
+    color: var(--color-primary-400);
+    margin: 0.5em;
+    width: 10.0em;
+    align-items: center;
+    border: 0.15em outset var(--color-bg-100);
+    border-radius: 5%;
+    transition-duration: 0.2s;
+    margin-inline-start: 0px;
+}
+
+button:hover {
+    border-color: var(--color-primary-400);
+    color: var(--color-primary-500);
+}
+
+button:disabled {
+    background-color: var(--color-bg-700);
+    border-color: var(--color-bg-400);
+    border-style: inset;
+    color: var(--color-secondary);
+    font-weight: 300;
+}
+
+div {
+    margin: 0.25em;
+    align-items: center;
+}
+
+input {  
+    background: var(--color-bg-600);
+    margin-inline-start: 1em;
+    text-align: center;
+    margin-block: 0.2em;
+}
+
+#navbar {
+    display: flex;
+}
+
+.navlink {
+    color: var(--color-primary-400);
+    background-color: var(--color-bg-700);
+    margin-inline: 1em;
+    margin-inline-start: 0px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    border-radius: 2%;
+    font-size: large;
+}
+
+.navlink:hover {
+    text-shadow: 0.0em 0.0em 0.4em var(--color-primary-700) ;
+    color: var(--color-primary-200);
+}
+
+.transport-button, .play-button, .stop-button {
+    background-color: var(--color-bg-500);
+    padding: 1em;
+}
+
+.play-button {
+    color: var(--color-bg-900);
+    background-color: var(--color-primary-600);
+}
+
+.stop-button {
+    color: var(--color-bg-900);
+    background-color: var(--color-accent-500);
+}
+
+.song, .current_song {
+    background-color: var(--color-bg-700);
+    border-color: var(--color-bg-900);
+    border: 0.3em groove;
+    transition-duration: 0.5s;
+    padding: 0.5em 0.5em 0.5em 1.0em ;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.current_song {
+    color: var(--color-text-900);
+    transition-duration: 0.5s;
+    background-color: var(--color-primary-600);
+    border-color: var(--color-bg-50);
+    font-size: large;
+    font-weight: 600;
+    padding: 1.5em;
+}
+
+.time_elapsed {
+    border: 0.1em inset var(--color-bg-400);
+    color: var(--color-primary-200);
+    background-color: var(--color-bg-900);
+    padding: 0.4em;
+    text-align: center;
+    font-weight: 800;
+    font-size: xx-large;
+    font-family: monospace;
+    font-stretch: wider;
+}

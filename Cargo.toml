@@ -1,0 +1,48 @@
+[package]
+name = "mtrack-remote"
+description = "A remote web application for mtrack"
+version = "0.1.0"
+authors = ["tobiaslabu <178519493+tobiaslabu@users.noreply.github.com>"]
+repository = "https://github.com/tobiaslabu/mtrack-remote"
+edition = "2021"
+license = "GPL-3.0"
+readme = "README.md"
+keywords = ["audio", "dioxus", "webapplication"]
+
+[dependencies]
+dioxus = { version = "^0.6.1", features = ["router", "fullstack"] }
+tokio = { version = "1.43.0", features = ["net", "sync"], optional = true }
+dioxus-isrg = { version = "0.6.1", optional = true }
+rosc = { version = "0.10.1", optional = true }
+serde = "1.0.217"
+reqwest = "0.12.12"
+gloo-timers = { version = "0.3.0", features = ["futures"] }
+thiserror = "2.0.11"
+num-traits = "0.2.19"
+dirs = "6.0.0"
+serde_json = "1.0.138"
+config = { version = "0.15.7", optional = true }
+dioxus-free-icons = { version = "0.9.0", features = ["lucide"] }
+
+[features]
+default = []
+server = [
+    "dioxus/server",
+    "dep:tokio",
+    "dep:dioxus-isrg",
+    "dep:rosc",
+    "dep:config",
+]
+web = ["dioxus/web"]
+desktop = ["dioxus/desktop"]
+mobile = ["dioxus/mobile"]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
